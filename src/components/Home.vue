@@ -1,19 +1,22 @@
 <template>
   <div class="hello">
-      <h1>
-        {{current.title}} - {{current.artist}}
-      </h1>
-      <div class="controls">
-        <button class="prev">Prev</button>
-        <button class="play" v-if="isPlaying" @click='play'>Play</button>
-        <button class="pause" v-else @click='pause'>Pause</button>
-        <button class="next" @click='next'>Next</button>
-      </div>
-      <div class="playlist">
-        <button v-for="item in songs" :key="item.src" @click='play(song)' :class="(song.src == current.src) ?  'song play' : 'song'">
-          {{item.title}}
+    <div class=song>
+          <h1>
+            {{current.title}} - {{current.artist}}
+          </h1>
+          <div class="controls">
+            <button class="prev" @click='prev'>Prev</button>
+            <button class="play" v-if="isPlaying" @click='play'>Play</button>
+            <button class="pause" v-else @click='pause'>Pause</button>
+            <button class="next" @click='next'>Next</button>
+          </div>
+    </div>
+    <div class="playlist">
+        <button v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
+          {{song.title}}
         </button>
-      </div>
+    </div>
+        
   </div>
 </template>
 
@@ -65,10 +68,32 @@ export default {
       state.isPlaying = false
     }
 
+    function next(){
+      state.index++
+      if(state.index > state.songs.length - 1){
+        state.index = 0
+      }
+
+      state.current = state.songs[state.index]
+      play(state.current)
+    }
+
+    function prev(){
+      state.index--
+      if(state.index < 0){
+        state.index = state.songs.length - 1
+      }
+
+      state.current = state.songs[state.index]
+      play(state.current)
+    }
+
     return{
       ...toRefs(state),
       play,
       pause,
+      next,
+      prev
     }
   }
   
