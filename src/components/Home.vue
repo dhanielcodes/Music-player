@@ -1,6 +1,18 @@
 <template>
   <div class="hello">
-    <div class=song>
+   
+    <div class="playlist">
+      <h1>PLAYLIST</h1>
+      <div class="songsList">
+          <button class="songl" v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
+            <h2>{{song.title}}</h2> <br>
+            {{song.artist}}
+          </button>
+      </div>
+        
+    </div>
+
+     <div class=song>
           <h1>
             {{current.title}} - {{current.artist}}
           </h1>
@@ -10,11 +22,6 @@
             <button class="pause" v-else @click='pause'>Pause</button>
             <button class="next" @click='next'>Next</button>
           </div>
-    </div>
-    <div class="playlist">
-        <button v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
-          {{song.title}}
-        </button>
     </div>
         
   </div>
@@ -101,7 +108,34 @@ export default {
 </script>
 
 <style scoped>
-.next{
+.hello{
+    display: grid;
+  grid-template-columns: 30% 70%;
+  grid-gap: 20px;
+}
+button{
   cursor: pointer;
+  outline: none;
+}
+.playlist{
+  background: black;
+  border-radius: 20px 20px 0px 0px;
+  height: 95vh;
+ /*  overflow: hidden;
+  overflow-Y: scroll; */
+}
+.songsList{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  width: 100%;
+}
+.songl, .playlist h1{
+  padding: 20px;
+  background: none;
+  color: white;
+  border: none;
+  border-bottom: 1px solid grey;
+  text-align: left;
 }
 </style>
