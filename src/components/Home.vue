@@ -43,7 +43,7 @@ export default {
       isPlaying: true,
       songs: [
         {
-          title: 'No Guidance ',
+          title: 'NO GUIDANCE - ft Drake',
           artist: 'Chris Brown',
           src: require('../assets/Chris Brown - No Guidance (Audio) ft. Drake-192.mp3')
         },
@@ -88,7 +88,7 @@ export default {
           src: require('../assets/Little Simz - 101 FM (Official Video)-64.mp3')
         },
         {
-          title: 'BLACKJACK fr Cordea',
+          title: 'BLACKJACK - ft Cordea',
           artist: 'Blackjack',
           src: require('../assets/01 BLACKJACK (feat. YBN Cordae) Rem.mp3')
         },
@@ -97,6 +97,18 @@ export default {
     })
 
     
+    /* onMounted(()=>{
+      if(state.player.ended){
+            state.index++
+          if(state.index > state.songs.length - 1){
+            state.index = 0
+          }
+
+          state.current = state.songs[state.index]
+          play(state.current)
+      }
+     
+    }) */
 
     state.current = state.songs[state.index]
     state.player.src = state.current.src
@@ -114,6 +126,8 @@ export default {
       state.player.play()
       state.isPlaying = false
     }
+
+      
 
     function next(){
       state.index++
@@ -140,7 +154,8 @@ export default {
       play,
       pause,
       next,
-      prev
+      prev,
+      stop
     }
   }
   
