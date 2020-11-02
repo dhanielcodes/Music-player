@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-   
     <div class="playlist">
+      <img src="../assets/top.svg" alt="" srcset="">
       <h1>PLAYLIST</h1>
       <div class="songsList">
           <button class="songl" v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
@@ -12,15 +12,19 @@
         
     </div>
 
-     <div class=song>
-          <h1>
-            {{current.title}} - {{current.artist}}
-          </h1>
+     <div class='sang'>
+       <img class="logo" src="../assets/logo.svg" alt="" srcset="">
+          <div class="name">
+            <h1>
+              {{current.title}}
+            </h1> 
+            {{current.artist}}
+          </div>
           <div class="controls">
-            <button class="prev" @click='prev'>Prev</button>
-            <button class="play" v-if="isPlaying" @click='play'>Play</button>
-            <button class="pause" v-else @click='pause'>Pause</button>
-            <button class="next" @click='next'>Next</button>
+            <button class="prev" @click='prev'><img src="../assets/prev.svg" alt="" srcset=""></button>
+            <button class="play" v-if="isPlaying" @click='play'><img src="../assets/play.svg" alt="" srcset=""></button>
+            <button class="pause" v-else @click='pause'><img src="../assets/pause.svg" alt="" srcset=""></button>
+            <button class="next" @click='next'><img src="../assets/next.svg" alt="" srcset=""></button>
           </div>
     </div>
         
@@ -116,6 +120,8 @@ export default {
 button{
   cursor: pointer;
   outline: none;
+   background: none;
+  border: none;
 }
 .playlist{
   background: black;
@@ -130,6 +136,9 @@ button{
   flex-direction: column;
   width: 100%;
 }
+.songl h2{
+  font-weight: 300;
+}
 .songl, .playlist h1{
   padding: 20px;
   background: none;
@@ -137,5 +146,37 @@ button{
   border: none;
   border-bottom: 1px solid grey;
   text-align: left;
+  font-weight: 300;
+}
+.sang{
+  color: white;
+  text-align: center; 
+}
+.logo{
+  width: 100%;
+  height: 70vh;
+}
+.controls{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+.name h1{
+  font-weight: 400;
+}
+@media (max-width: 1060px){
+  .hello{
+     grid-template-columns: 100%;
+  grid-gap: 20px;
+  }
+  .playlist{
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 90%);
+    width: 80%;
+    border: 1px solid grey;
+
+  }
 }
 </style>
