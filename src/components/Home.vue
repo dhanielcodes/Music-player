@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
-    <div class="playlist">
-      <img src="../assets/top.svg" alt="" srcset="">
+    <div class="playlist" :class="{open: open}">
+      <img class="top" :class="{open: open}" @click="open = !open" src="../assets/top.svg" alt="" srcset="">
       <h1>PLAYLIST</h1>
       <div class="songsList">
           <button class="songl" v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
@@ -39,6 +39,7 @@ export default {
     const state = reactive({
       current: {},
       index: 0,
+      open: false,
       isPlaying: true,
       songs: [
         {
@@ -130,6 +131,9 @@ button{
  /*  overflow: hidden;
   overflow-Y: scroll; */
 }
+.top{
+  display: none;
+}
 .songsList{
   display: flex;
   justify-content: space-around;
@@ -173,10 +177,41 @@ button{
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%, 90%);
+    transform: translate(-50%, 100%);
     width: 80%;
-    border: 1px solid grey;
+    border-left: 1px solid grey;
+    border-top: 1px solid grey;
+    border-right: 1px solid grey;
+    transition: all .3s;
+    height: 80vh;
 
+  }
+  .top{
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: -10px;
+    transform: translate(-50%, -100%);
+    cursor: pointer;
+    transition: all .3s
+  }
+  .top.open{
+    transform: translate(-50%, -100%) rotate(180deg);
+  }
+  .logo{
+    height: 60vh;
+  }
+  .prev img, .next img{
+    width: 20px;
+  }
+  .open{
+    transform: translate(-50%, 0%)
+  }
+  .play img{
+    width: 50px;
+  }
+  .pause img{
+    width: 30px;
   }
 }
 </style>
