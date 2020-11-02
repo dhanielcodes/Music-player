@@ -1,16 +1,19 @@
 <template>
   <div class="hello">
-    <div class="playlist" :class="{open: open}">
-      <img class="top" :class="{open: open}" @click="open = !open" src="../assets/top.svg" alt="" srcset="">
-      <h1>PLAYLIST</h1>
-      <div class="songsList">
-          <button class="songl" v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
-            <h2>{{song.title}}</h2> <br>
-            {{song.artist}}
-          </button>
-      </div>
-        
+    <div class="main" :class="{open: open}">
+    <img class="top" :class="{open: open}" @click="open = !open" src="../assets/top.svg" alt="" srcset="">
+        <div class="playlist">
+          <h1>PLAYLIST</h1>
+          <div class="songsList">
+              <button class="songl" v-for="song in songs" :key="song.src" @click='play(song)' :class="(song.src == current.src) ? 'song playing' : 'song'">
+                <h2>{{song.title}}</h2> <br>
+                {{song.artist}}
+              </button>
+          </div>
+            
+        </div>
     </div>
+     
 
      <div class='sang'>
        <img class="logo" src="../assets/logo.svg" alt="" srcset="">
@@ -189,6 +192,11 @@ button{
   background: #FFE600;
   border-radius:0px 200px 200px 200px;
 }
+.main{
+  position: relative;
+  border-radius: 10px 10px 0px 0px;
+
+}
 .top{
   display: none;
 }
@@ -232,7 +240,12 @@ button{
   grid-gap: 20px;
   }
   .playlist{
-    position: fixed;
+   
+    height: 100%;
+
+  }
+  .main{
+ position: fixed;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 100%);
@@ -242,8 +255,7 @@ button{
     border-right: 1px solid grey;
     transition: all .3s;
     height: 80vh;
-
-  }
+}
   .top{
     display: block;
     position: absolute;
