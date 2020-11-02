@@ -48,15 +48,50 @@ export default {
           src: require('../assets/Chris Brown - No Guidance (Audio) ft. Drake-192.mp3')
         },
         {
-          title: '6LACK ',
-          artist: 'Switch',
+          title: 'SWITCH ',
+          artist: '6LACK',
           src: require('../assets/6LACK - Switch (Official Video)-128.mp3')
+        },
+        {
+          title: 'A LOT - ft Jcole ',
+          artist: '21 Savage',
+          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+        },
+        {
+          title: 'UNDECIDED ',
+          artist: 'Chris Brown',
+          src: require('../assets/Chris_Brown_-_Undecided_Mp3bullet.ng.mp3')
+        },
+        {
+          title: 'HOTLINE BLING',
+          artist: 'Drake',
+          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
         },
         {
           title: 'A Lot ',
           artist: '21 Savage',
           src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
-        }
+        },
+        {
+          title: 'A Lot ',
+          artist: '21 Savage',
+          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+        },
+        {
+          title: 'A Lot ',
+          artist: '21 Savage',
+          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+        },
+        {
+          title: 'A Lot ',
+          artist: '21 Savage',
+          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+        },
+        {
+          title: 'A Lot ',
+          artist: '21 Savage',
+          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+        },
       ],
       player: new Audio()
     })
@@ -126,10 +161,18 @@ button{
 }
 .playlist{
   background: black;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 10px 10px 0px 0px;
   height: 95vh;
- /*  overflow: hidden;
-  overflow-Y: scroll; */
+  overflow: hidden;
+  overflow-Y: scroll;
+}
+.playlist::-webkit-scrollbar{
+  width: 7px;
+  padding: 10px;
+}
+.playlist::-webkit-scrollbar-thumb{
+  background: #FFE600;
+  border-radius:0px 200px 200px 200px;
 }
 .top{
   display: none;
