@@ -65,32 +65,32 @@ export default {
         {
           title: 'HOTLINE BLING',
           artist: 'Drake',
-          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+          src: require('../assets/Drake - Hotline Bling-128.mp3')
         },
         {
-          title: 'A Lot ',
-          artist: '21 Savage',
-          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+          title: 'RANSOM',
+          artist: 'Lil Tecca',
+          src: require('../assets/Lil_Tecca_-_Ransom_talkglitz.tv.mp3')
         },
         {
-          title: 'A Lot ',
+          title: 'MIDDLE CHILD',
           artist: '21 Savage',
-          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+          src: require('../assets/J_Cole_-_Middle_Child_talkglitz.tv.mp3')
         },
         {
-          title: 'A Lot ',
-          artist: '21 Savage',
-          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+          title: 'THUNDERCLOUDS',
+          artist: 'LSD',
+          src: require('../assets/LSD - Thunderclouds (Official Video) ft. Sia, Diplo, Labrinth-128.mp3')
         },
         {
-          title: 'A Lot ',
-          artist: '21 Savage',
-          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+          title: '101 FM',
+          artist: 'Little Simz',
+          src: require('../assets/Little Simz - 101 FM (Official Video)-64.mp3')
         },
         {
-          title: 'A Lot ',
-          artist: '21 Savage',
-          src: require('../assets/21 Savage – A Lot (OG Version)_(Downloadnaija-com).mp3')
+          title: 'BLACKJACK fr Cordea',
+          artist: 'Blackjack',
+          src: require('../assets/01 BLACKJACK (feat. YBN Cordae) Rem.mp3')
         },
       ],
       player: new Audio()
